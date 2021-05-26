@@ -19,7 +19,7 @@ import javax.validation.constraints.Pattern;
 public class Vizitka {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Length(max = 100)
     @NotBlank
@@ -51,11 +51,11 @@ public class Vizitka {
     @Length(max = 100)
     private String web;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

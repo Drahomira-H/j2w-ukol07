@@ -21,9 +21,9 @@
                     <div ><span th:text="${vizitka.psc}">11000</span> <span th:text="${vizitka.obec}">Praha 1</span></div>
                 </div>
                 <div class="kontakty">
-                    <div><i class="las la-at"></i> <span th:text="${vizitka.email}">dita@czechitas.cs</span></div>
-                    <div><i class="las la-phone-alt"></i> <span th:text="${vizitka.telefon}">+420 800123456</span></div>
-                    <div><i class="las la-globe"></i> <span th:text="${vizitka.web}">www.czechitas.cz</span></div>
+                    <div th:if="${vizitka.email} != null and ${vizitka.email} != ''"><i class="las la-at"></i> <span th:text="${vizitka.email}">dita@czechitas.cs</span></div>
+                    <div th:if="${vizitka.telefon} != null and ${vizitka.telefon} != ''"><i class="las la-phone-alt"></i> <span th:text="${vizitka.telefon}">+420 800123456</span></div>
+                    <div th:if="${vizitka.web} != null and ${vizitka.web} != ''"><i class="las la-globe"></i> <span th:text="${vizitka.web}">www.czechitas.cz</span></div>
                 </div>
             </div>
         </div>
