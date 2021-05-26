@@ -40,6 +40,7 @@ public class Vizitka {
 
     @Length(max = 5)
     @NotBlank(message = "PSČ je povinný údaj.")
+    @Pattern(regexp = "\\d{5}", message = "PSČ je špatném tvaru.")
     private String psc;
 
     @Length(max = 100)

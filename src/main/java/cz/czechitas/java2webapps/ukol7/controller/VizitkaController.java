@@ -48,6 +48,15 @@ public class VizitkaController {
                 .addObject("vizitka", vizitka.get());
     }
 
+    @PostMapping(value = "/{id:[0-9]+}", params = {"id"})
+    public Object odstranit(@PathVariable int id) {
+        Optional<Vizitka> vizitka = repository.findById(id);
+        if (vizitka.isPresent()) {
+            repository.deleteById(id);
+        }
+        return "redirect:/";
+    }
+
     @GetMapping("/nova")
     public Object nova() {
         return new ModelAndView("formular")
@@ -63,8 +72,5 @@ public class VizitkaController {
         repository.save(vizitka);
         return "redirect:/";
     }
-
-
-
 
 }

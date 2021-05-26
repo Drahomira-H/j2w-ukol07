@@ -5,52 +5,70 @@
     <title>Vizitkovník</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
 <div class="detail">
-    <form class="vizitka"  th:classappend="${#fields.hasErrors('vizitka.*')} ? 'was-validated'" method="post">
+    <form class="vizitka" th:classappend="${#fields.hasErrors('vizitka.*')} ? 'was-validated'" method="post" novalidate>
         <div class="row">
             <label for="jmeno">Jméno</label>
-            <input th:field="${vizitka.celeJmeno}" type="text" id="jmeno" name="jmeno" maxlength="100" required />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.celeJmeno')}" th:errors="${vizitka.celeJmeno}">Jméno je povinný údaj.</div>
+            <input th:field="${vizitka.celeJmeno}" type="text" id="jmeno" name="jmeno" maxlength="100" required/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.celeJmeno')}"
+                 th:errors="${vizitka.celeJmeno}">Jméno je povinný údaj.
+            </div>
         </div>
         <div class="row">
             <label for="firma">Firma</label>
-            <input th:field="${vizitka.firma}"  type="text" id="firma" name="firma" maxlength="100" required />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.firma')}" th:errors="${vizitka.firma}">Firma je povinný údaj.</div>
+            <input th:field="${vizitka.firma}" type="text" id="firma" name="firma" maxlength="100" required/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.firma')}" th:errors="${vizitka.firma}">Firma
+                je povinný údaj.
+            </div>
         </div>
         <div class="row">
             <label for="ulice">Ulice a čísla</label>
-            <input th:field="${vizitka.ulice}"  type="text" id="ulice" name="ulice" maxlength="100" required />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.ulice')}" th:errors="${vizitka.ulice}">Ulice je povinný údaj.</div>
+            <input th:field="${vizitka.ulice}" type="text" id="ulice" name="ulice" maxlength="100" required/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.ulice')}" th:errors="${vizitka.ulice}">Ulice
+                je povinný údaj.
+            </div>
         </div>
         <div class="row">
             <label for="obec">Obec</label>
-            <input th:field="${vizitka.obec}"  type="text" id="obec" name="obec" maxlength="100" required />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.obec')}" th:errors="${vizitka.obec}">Obec je povinný údaj.</div>
+            <input th:field="${vizitka.obec}" type="text" id="obec" name="obec" maxlength="100" required/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.obec')}" th:errors="${vizitka.obec}">Obec je
+                povinný údaj.
+            </div>
         </div>
         <div class="row">
             <label for="psc">PSČ</label>
-            <input th:field="${vizitka.psc}"  type="text" id="psc" name="psc" minlength="5" maxlength="5" pattern="[0-9]{5}" required />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.psc')}" th:errors="${vizitka.psc}">PSČ je povinný údaj.</div>
+            <input th:field="${vizitka.psc}" type="text" id="psc" name="psc" minlength="5" maxlength="5"
+                   pattern="[0-9]{5}" required/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.psc')}" th:errors="${vizitka.psc}">PSČ je
+                povinný údaj.
+            </div>
         </div>
         <div class="row">
             <label for="email">E-mail <small>(volitelný)</small></label>
-            <input th:field="${vizitka.email}"  type="email" id="email" name="email" maxlength="100" />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.email')}" th:errors="${vizitka.email}">E-mail je ve špatném tvaru.</div>
+            <input th:field="${vizitka.email}" type="email" id="email" name="email" maxlength="100"/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.email')}" th:errors="${vizitka.email}">E-mail
+                je ve špatném tvaru.
+            </div>
         </div>
         <div class="row">
             <label for="telefon">Telefon <small>(volitelný)</small></label>
-            <input th:field="${vizitka.telefon}"  type="tel" id="telefon" name="telefon"  maxlength="100"  />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.telefon')}" th:errors="${vizitka.telefon}">Telefonní číslo je ve špatném tvaru.</div>
+            <input th:field="${vizitka.telefon}" type="tel" id="telefon" name="telefon" maxlength="100"/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.telefon')}" th:errors="${vizitka.telefon}">
+                Telefonní číslo je ve špatném tvaru.
+            </div>
         </div>
         <div class="row">
             <label for="web">Web <small>(volitelný)</small></label>
-            <input th:field="${vizitka.web}"  type="url" id="web" name="web" maxlength="100"  />
-            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.web')}" th:errors="${vizitka.web}">Chybné zadání.</div>
+            <input th:field="${vizitka.web}" type="url" id="web" name="web" maxlength="100"/>
+            <div class="invalid-input" th:if="${#fields.hasErrors('vizitka.web')}" th:errors="${vizitka.web}">Chybné
+                zadání.
+            </div>
         </div>
         <div class="form-controls">
             <button type="submit">Odeslat</button>
