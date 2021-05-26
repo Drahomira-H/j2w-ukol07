@@ -59,6 +59,11 @@ form.vizitka {
     height: auto;
 }
 
+.invalid-input {
+    color: red;
+    font-style: italic;
+}
+
 .jmeno {
     font-weight: bold;
     font-size: 18pt;

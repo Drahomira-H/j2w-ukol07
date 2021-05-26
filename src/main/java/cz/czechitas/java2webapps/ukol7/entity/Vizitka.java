@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -22,33 +23,34 @@ public class Vizitka {
     private Integer id;
 
     @Length(max = 100)
-    @NotBlank
+    @NotBlank(message = "Jméno je povinný údaj.")
     private String celeJmeno;
 
     @Length(max = 100)
-    @NotBlank
+    @NotBlank(message = "Firma je povinný údaj.")
     private String firma;
 
     @Length(max = 100)
-    @NotBlank
+    @NotBlank(message = "Ulice je povinný údaj.")
     private String ulice;
 
     @Length(max = 100)
-    @NotBlank
+    @NotBlank(message = "Obec je povinný údaj.")
     private String obec;
 
     @Length(max = 5)
-    @NotBlank
+    @NotBlank(message = "PSČ je povinný údaj.")
     private String psc;
 
     @Length(max = 100)
+    @Email(message = "Email je ve špatném tvaru.")
     private String email;
 
     @Length(max = 20)
-    @Pattern(regexp = "\\+?\\d+")
+    @Pattern(regexp = "\\+?\\d*", message = "Telefonní číslo je ve špatném tvaru.")
     private String telefon;
 
-    @Length(max = 100)
+    @Length(max = 100, message = "Chybné zadání.")
     private String web;
 
     public Integer getId() {
